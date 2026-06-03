@@ -10,6 +10,7 @@ Aws Finops Automation Toolkit focuses on reusable patterns rather than environme
 - Implementation: examples and scripts in this repository.
 - Validation: local checks and GitHub Actions workflows that prevent obvious drift.
 - Operations: ownership, escalation and maintenance notes in `docs/operating-model.md`.
+- Visual model: AWS FinOps data flow, commitment review and remediation diagrams in `docs/diagrams.md`.
 
 ## Design Principles
 

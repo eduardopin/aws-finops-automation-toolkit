@@ -11,6 +11,7 @@ Start with the architecture and operating model documents, then inspect the exam
 ## Repository Map
 
 - `docs/` - design notes, operational guidance and review material.
+- `docs/diagrams.md` - visual diagrams for AWS FinOps data flow, governance and automation decisions.
 - `examples/` - runnable or adaptable examples with placeholder values.
 - `scripts/` - small automation helpers intended for local validation.
 - `.github/workflows/` - continuous validation and repository hygiene checks.
