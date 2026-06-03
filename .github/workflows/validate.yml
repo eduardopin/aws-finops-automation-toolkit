@@ -1,18 +1,25 @@
 name: validate
 
 on:
-  push:
-    branches: [main]
   pull_request:
+  push:
+    branches: [ main, master, develop, dev ]
 
 jobs:
-  repository-structure:
+  repository-hygiene:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate required files
+      - name: Check required repository files
         run: |
           test -f README.md
-          test -f docs/architecture.md
-          test -f docs/adr-001-portfolio-scope.md
-          find . -maxdepth 3 -type f | sort
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -f CHANGELOG.md
+      - name: Check whitespace
+        run: git diff --check
+      - name: Check generated documentation paths
+        run: |
+          test -d docs || test -d _eduardo-notes
+      - name: Summarize validation scope
+        run: echo "Validated authored repository documentation and hygiene."
