@@ -1,0 +1,25 @@
+name: public-safety-audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  public-safety-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for common secret patterns
+        run: |
+          set -euo pipefail
+          if grep -RInE '(AKIA[0-9A-Z]{16}|aws_secret_access_key|BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|ghp_[A-Za-z0-9_]{30,}|xox[baprs]-[A-Za-z0-9-]+)' . --exclude-dir=.git; then
+            echo "Potential secret pattern found. Review before publishing."
+            exit 2
+          fi
+          echo "No common secret pattern found."
+      - name: Validate core public-trust documents
+        run: |
+          test -f README.md
+          test -f docs/public-trust.md
+          test -f docs/ats-keywords.md
