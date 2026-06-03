@@ -1,0 +1,18 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  repository-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required files
+        run: |
+          test -f README.md
+          test -f docs/architecture.md
+          test -f docs/adr-001-portfolio-scope.md
+          find . -maxdepth 3 -type f | sort
