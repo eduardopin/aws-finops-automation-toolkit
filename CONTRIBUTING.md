@@ -1,5 +1,12 @@
 # Contributing
 
-This is a public professional portfolio repository. Contributions are not expected, but issues or suggestions about clarity, structure, documentation and public-safe examples are welcome.
+## Change Expectations
 
-Do not submit proprietary code, secrets, internal architecture or customer data.
+- Keep pull requests focused on one operational improvement.
+- Update documentation when behavior, assumptions or examples change.
+- Avoid environment-specific values and sensitive data.
+- Run validation before asking for review.
+
+## Commit Style
+
+Use specific messages such as `docs: add rollback checklist` or `feat: add cost summary script`.
