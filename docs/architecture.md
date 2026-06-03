@@ -1,32 +1,19 @@
-# Architecture
+# Architecture and Component Model
 
-## Context
+## Scope
 
-AWS FinOps automation toolkit with Cost Explorer patterns, Infracost, Cloud Custodian and scheduled shutdown/start controls.
+Aws Finops Automation Toolkit focuses on reusable patterns rather than environment-specific deployments. Components are documented as replaceable building blocks with clear inputs, outputs and review checkpoints.
 
-## Goals
+## Component Boundaries
 
-- Provide a reusable and understandable architecture reference.
-- Show how infrastructure capabilities become reliable engineering products.
-- Make security, reliability and cost considerations explicit.
-- Keep public examples free of secrets, company code and proprietary implementation details.
+- Interface: configuration, templates, policies or runbook inputs that callers control.
+- Implementation: examples and scripts in this repository.
+- Validation: local checks and GitHub Actions workflows that prevent obvious drift.
+- Operations: ownership, escalation and maintenance notes in `docs/operating-model.md`.
 
-## Non-goals
+## Design Principles
 
-- Reproduce any employer environment.
-- Publish internal architecture diagrams.
-- Expose production hostnames, customer data, credentials or private operational details.
-
-## High-level flow
-
-
-
-## Main trade-offs
-
-| Decision area | Preferred bias | Rationale |
-|---|---|---|
-| Automation | Repeatable over manual | Reduces drift and operational risk. |
-| Security | Guardrails in CI/CD | Prevents late discovery of risk. |
-| Reliability | Observable systems | Unknown failure modes become visible earlier. |
-| Cost | Cost-aware defaults | Cloud cost is a design constraint, not only a finance problem. |
-| Documentation | Docs as operational interface | Teams scale better when knowledge is explicit. |
+- Prefer explicit configuration over hidden defaults.
+- Keep examples small enough to review.
+- Separate policy decisions from execution mechanics.
+- Document assumptions next to the implementation that depends on them.
