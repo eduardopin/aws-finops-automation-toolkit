@@ -2,22 +2,31 @@
 
 ## Context
 
-Describe the business/engineering problem this repository solves.
+AWS FinOps automation toolkit with Cost Explorer patterns, Infracost, Cloud Custodian and scheduled shutdown/start controls.
 
-## High-level design
+## Goals
 
-Add architecture diagram and main components.
+- Provide a reusable and understandable architecture reference.
+- Show how infrastructure capabilities become reliable engineering products.
+- Make security, reliability and cost considerations explicit.
+- Keep public examples free of secrets, company code and proprietary implementation details.
 
-## Operational concerns
+## Non-goals
 
-- Availability
-- Security
-- Cost
-- Observability
-- Deployment
-- Rollback
-- Incident response
+- Reproduce any employer environment.
+- Publish internal architecture diagrams.
+- Expose production hostnames, customer data, credentials or private operational details.
 
-## Trade-offs
+## High-level flow
 
-Document explicit technical decisions and alternatives.
+
+
+## Main trade-offs
+
+| Decision area | Preferred bias | Rationale |
+|---|---|---|
+| Automation | Repeatable over manual | Reduces drift and operational risk. |
+| Security | Guardrails in CI/CD | Prevents late discovery of risk. |
+| Reliability | Observable systems | Unknown failure modes become visible earlier. |
+| Cost | Cost-aware defaults | Cloud cost is a design constraint, not only a finance problem. |
+| Documentation | Docs as operational interface | Teams scale better when knowledge is explicit. |

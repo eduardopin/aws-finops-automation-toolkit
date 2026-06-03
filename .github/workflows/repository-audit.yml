@@ -1,0 +1,15 @@
+name: repository-audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate portfolio repository structure
+        run: |
+          bash scripts/repo_local_audit.sh
