@@ -1,21 +1,19 @@
 # Reviewer Guide
 
-## Purpose
+## Quickstart
 
-This repository exists to provide public evidence of professional judgment in infrastructure, cloud, platform engineering, SRE, FinOps and DevSecOps.
+1. Read `README.md` for scope.
+2. Review `docs/security.md`, `docs/reliability.md` and `docs/cost-model.md`.
+3. Inspect examples under `examples/`.
+4. Run `bash scripts/repository_review.sh` when available.
 
-## Fast review path
+## What Good Looks Like
 
-1. Read the executive summary in the root README.
-2. Review the architecture and operating model.
-3. Check the security model to confirm the repository is intentionally sanitized.
-4. Review the runbooks for operational maturity.
-5. Review the GitHub Actions workflow for repository hygiene and delivery discipline.
+- Clear operational purpose.
+- No proprietary values.
+- Small examples with explicit assumptions.
+- Validation that catches common repository hygiene issues.
 
-## Recruiter signal
+## Suggested Review Focus
 
-This repository intentionally uses the vocabulary found in real job descriptions for Cloud Infrastructure Manager, Platform Engineering Manager, SRE Manager, Head of Platform Engineering, DevSecOps Manager and Infrastructure Lead roles.
-
-## Technical reviewer signal
-
-The value is in the design constraints, trade-offs, controls and operating model. The implementation can evolve without changing the core architectural reasoning.
+For Aws Finops Automation Toolkit, focus on whether the examples are understandable, reusable and constrained enough for safe adaptation.
