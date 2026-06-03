@@ -22,4 +22,5 @@ jobs:
         run: |
           test -f README.md
           test -f docs/public-trust.md
-          test -f docs/ats-keywords.md
+          test -f docs/reviewer-guide.md
+          test -f docs/security.md
