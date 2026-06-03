@@ -1,21 +1,17 @@
 # Operating Model
 
-## Ownership model
+## Ownership
 
-| Area | Owner | Evidence |
-|---|---|---|
-| Platform capability | Platform / Cloud team | Templates, modules, standards and documentation. |
-| Runtime reliability | Service owner + SRE/platform support | SLOs, dashboards, runbooks and incident reviews. |
-| Security posture | Engineering + Security partnership | CI/CD gates, hardening, secrets policy and audit evidence. |
-| Cost accountability | Engineering + FinOps | Cost allocation, tagging, budgets and optimization backlog. |
+The repository owner maintains examples, validation checks and documentation. Consumers own environment-specific decisions such as naming, tagging, approval flow, deployment cadence and incident response.
 
-## Governance rhythm
+## Change Flow
 
-- Weekly platform backlog review.
-- Monthly cost and reliability review.
-- Incident review for material failures.
-- Quarterly architecture and security posture review.
+1. Describe the operational reason for a change.
+2. Update examples or templates with the smallest practical scope.
+3. Run local validation.
+4. Review security, reliability and cost impact.
+5. Document any new assumption in `docs/`.
 
-## Definition of done
+## Boundaries
 
-A platform capability is not complete when it deploys successfully. It is complete when it is documented, observable, secure, cost-accountable and supportable.
+This repository is a reference implementation. It does not replace internal platform standards, compliance controls, change-management requirements or production incident procedures.
