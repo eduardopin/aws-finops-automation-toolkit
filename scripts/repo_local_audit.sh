@@ -25,7 +25,8 @@ done
 
 if grep -RInE '(AKIA[0-9A-Z]{16}|aws_secret_access_key|BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|ghp_[A-Za-z0-9_]{30,})' . \
   --exclude-dir=.git \
-  --exclude='repo_local_audit.sh'; then
+  --exclude='repo_local_audit.sh' \
+  --exclude='public-safety-audit.yml'; then
   echo "Potential secret pattern found. Review before publishing."
   exit 2
 fi

@@ -13,7 +13,7 @@ jobs:
       - name: Check for common secret patterns
         run: |
           set -euo pipefail
-          if grep -RInE '(AKIA[0-9A-Z]{16}|aws_secret_access_key|BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|ghp_[A-Za-z0-9_]{30,}|xox[baprs]-[A-Za-z0-9-]+)' . --exclude-dir=.git; then
+          if grep -RInE '(AKIA[0-9A-Z]{16}|aws_secret_access_key|BEGIN RSA PRIVATE KEY|BEGIN OPENSSH PRIVATE KEY|ghp_[A-Za-z0-9_]{30,}|xox[baprs]-[A-Za-z0-9-]+)' . --exclude-dir=.git --exclude=public-safety-audit.yml --exclude=repo_local_audit.sh; then
             echo "Potential secret pattern found. Review before publishing."
             exit 2
           fi
